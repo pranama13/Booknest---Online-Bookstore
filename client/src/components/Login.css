@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --primary-color: #00A7B5; /* Teal */
+  --secondary-color: #FF6F61; /* Coral */
+  --background-color: #FFFFFF; /* White */
+  --section-bg-color: #F8FAFC; /* Light Gray */
+  --text-color: #333333; /* Dark Gray */
+  --body-text-color: #666666; /* Medium Gray */
+  --accent-color: #FFB946; /* Amber */
+  --border-radius: 6px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.9); }
+  to { transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp uilder/0.3s ease-out forwards;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--section-bg-color);
+}
+
+.login-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--section-bg-color);
+  padding: 2rem;
+}
+
+.login-image img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.login-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.login-card {
+  background-color: var(--background-color);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.portal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  color: var(--text-color);
+  transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.form-group input:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(0, 167, 181, 0.2);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(0, 167, 181, 0.3);
+}
+
+.form-group input::placeholder {
+  color: #999;
+}
+
+.remember-me {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.remember-me input[type="checkbox"] {
+  width: auto;
+  cursor: pointer;
+}
+
+.remember-me label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.login-button {
+  padding: 0.75rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.login-button:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 167, 181, 0.3);
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.signup-link {
+  font-size: 0.9rem;
+  color: var(--body-text-color);
+  margin-top: 1rem;
+}
+
+.signup-link a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signup-link a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.home-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--secondary-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.home-button:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .login-image {
+    padding: 1rem;
+  }
+
+  .login-image img {
+    max-height: 40vh;
+  }
+
+  .login-content {
+    padding: 1rem;
+  }
+
+  .login-card {
+    margin: 0 1rem;
+  }
+}
